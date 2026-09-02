@@ -256,15 +256,3 @@ Criar uma página inicial simples para apresentar uma empresa de segurança digi
 </body>
 </html>
 ```
-
-## 📝 Avaliação
-
-Gostaria de receber feedback sobre:
-
-- Estrutura do HTML
-- Organização do CSS
-- Responsividade
-- Design
-- Possíveis melhorias
-- Boas práticas
-
