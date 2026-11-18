@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<APP>
+    <LOGICO>
+        <Tabela id="1" nome="USUARIOS" x="60" y="80">
+            <Campo nome="id_usuario" tipo="INT" pk="true" auto_inc="true"/>
+            <Campo nome="nome" tipo="VARCHAR(100)" nn="true"/>
+            <Campo nome="email" tipo="VARCHAR(150)" nn="true" unique="true"/>
+            <Campo nome="senha_hash" tipo="VARCHAR(255)" nn="true"/>
+            <Campo nome="perfil" tipo="ENUM('ALUNO','ADMIN')" nn="true"/>
+            <Campo nome="data_cadastro" tipo="DATETIME" nn="true"/>
+        </Tabela>
+        <Tabela id="2" nome="PEDIDOS" x="340" y="80">
+            <Campo nome="id_pedido" tipo="INT" pk="true" auto_inc="true"/>
+            <Campo nome="id_usuario" tipo="INT" fk="true" ref="USUARIOS.id_usuario"/>
+            <Campo nome="data_pedido" tipo="DATETIME" nn="true"/>
+            <Campo nome="valor_total" tipo="DECIMAL(10,2)" nn="true"/>
+            <Campo nome="cupom_aplicado" tipo="VARCHAR(30)"/>
+            <Campo nome="status_pagamento" tipo="VARCHAR(30)" nn="true"/>
+        </Tabela>
+        <Tabela id="3" nome="ITENS_PEDIDO" x="620" y="80">
+            <Campo nome="id_item" tipo="INT" pk="true" auto_inc="true"/>
+            <Campo nome="id_pedido" tipo="INT" fk="true" ref="PEDIDOS.id_pedido"/>
+            <Campo nome="id_curso" tipo="INT" fk="true" ref="CURSOS.id_curso"/>
+            <Campo nome="preco_unitario" tipo="DECIMAL(10,2)" nn="true"/>
+        </Tabela>
+        <Tabela id="4" nome="CURSOS" x="620" y="300">
+            <Campo nome="id_curso" tipo="INT" pk="true" auto_inc="true"/>
+            <Campo nome="titulo" tipo="VARCHAR(120)" nn="true"/>
+            <Campo nome="descricao" tipo="TEXT" nn="true"/>
+            <Campo nome="nivel" tipo="VARCHAR(30)" nn="true"/>
+            <Campo nome="carga_horaria" tipo="INT" nn="true"/>
+            <Campo nome="preco" tipo="DECIMAL(10,2)" nn="true"/>
+        </Tabela>
+        <Tabela id="5" nome="CONTEUDOS_SEGURANCA" x="60" y="300">
+            <Campo nome="id_conteudo" tipo="INT" pk="true" auto_inc="true"/>
+            <Campo nome="id_autor" tipo="INT" fk="true" ref="USUARIOS.id_usuario"/>
+            <Campo nome="titulo" tipo="VARCHAR(150)" nn="true"/>
+            <Campo nome="tipo_conteudo" tipo="ENUM('DICA','FERRAMENTA')" nn="true"/>
+            <Campo nome="categoria" tipo="VARCHAR(60)" nn="true"/>
+            <Campo nome="resumo" tipo="TEXT" nn="true"/>
+            <Campo nome="url_oficial" tipo="VARCHAR(255)"/>
+        </Tabela>
+        <Tabela id="6" nome="INSCRICOES_ALERTA" x="340" y="300">
+            <Campo nome="id_inscricao" tipo="INT" pk="true" auto_inc="true"/>
+            <Campo nome="email_assinante" tipo="VARCHAR(150)" nn="true" unique="true"/>
+            <Campo nome="data_inscricao" tipo="DATETIME" nn="true"/>
+            <Campo nome="ativo" tipo="BOOLEAN" nn="true"/>
+        </Tabela>
+    </LOGICO>
+</APP>

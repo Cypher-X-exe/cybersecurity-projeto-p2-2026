@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<APP>
+    <CONFIGURACAO>
+        <Configuracoes>
+            <dirImagens/>
+            <ativo>true</ativo>
+            <mostrarGrade>true</mostrarGrade>
+        </Configuracoes>
+    </CONFIGURACAO>
+    <CONCEITUAL>
+        <Entidade id="1" nome="USUARIO" x="100" y="150">
+            <Atributo id="2" nome="id_usuario" identificador="true"/>
+            <Atributo id="3" nome="nome"/>
+            <Atributo id="4" nome="email"/>
+            <Atributo id="5" nome="senha_hash"/>
+            <Atributo id="6" nome="perfil"/>
+            <Atributo id="7" nome="data_cadastro"/>
+        </Entidade>
+        <Entidade id="8" nome="CURSO" x="500" y="150">
+            <Atributo id="9" nome="id_curso" identificador="true"/>
+            <Atributo id="10" nome="titulo"/>
+            <Atributo id="11" nome="descricao"/>
+            <Atributo id="12" nome="nivel"/>
+            <Atributo id="13" nome="carga_horaria"/>
+            <Atributo id="14" nome="preco"/>
+        </Entidade>
+        <Entidade id="15" nome="PEDIDO" x="300" y="350">
+            <Atributo id="16" nome="id_pedido" identificador="true"/>
+            <Atributo id="17" nome="data_pedido"/>
+            <Atributo id="18" nome="valor_total"/>
+            <Atributo id="19" nome="cupom_aplicado"/>
+            <Atributo id="20" nome="status_pagamento"/>
+        </Entidade>
+        <Entidade id="21" nome="CONTEUDO_SEGURANCA" x="100" y="520">
+            <Atributo id="22" nome="id_conteudo" identificador="true"/>
+            <Atributo id="23" nome="titulo"/>
+            <Atributo id="24" nome="tipo_conteudo"/>
+            <Atributo id="25" nome="categoria"/>
+            <Atributo id="26" nome="resumo"/>
+        </Entidade>
+        <Entidade id="27" nome="INSCRICAO_ALERTA" x="500" y="520">
+            <Atributo id="28" nome="id_inscricao" identificador="true"/>
+            <Atributo id="29" nome="email_assinante"/>
+            <Atributo id="30" nome="data_inscricao"/>
+            <Atributo id="31" nome="ativo"/>
+        </Entidade>
+        <Relacionamento id="32" nome="REALIZA" x="180" y="250" card1="1,1" card2="0,N" ent1="1" ent2="15"/>
+        <Relacionamento id="33" nome="CONTEM" x="420" y="250" card1="1,N" card2="0,N" ent1="15" ent2="8">
+            <Atributo id="34" nome="preco_unitario"/>
+        </Relacionamento>
+        <Relacionamento id="35" nome="PUBLICA" x="100" y="350" card1="1,1" card2="0,N" ent1="1" ent2="21"/>
+    </CONCEITUAL>
+</APP>
